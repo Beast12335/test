@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width"/>
+<title>HTML Result</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+
+<script>
+    function start() {
+        const title = document.getElementById('title');
+        title.innerText = "Guess This!";
+        const button = document.getElementById('button');
+        button.onclick = "test()";
+        button.innerText = "Guess";
+        button.id = " next"
+        button.type = "submit";
+        const field = document.createElement("input");
+        field.placeholder = "Guess me!";
+        document.body.appendChild(field);
+    }
+    function test() {
+      let x = document.getElementById("numb").value;
+      let text;
+      if (isNaN(x) || x < 1 || x > 10) {
+        text = "Input not valid";
+        const button = documemt.getElementById('next') 
+        button.onclick = next()
+      } else {
+        text = "Input OK";
+      }
+      document.getElementById("demo").innerHTML = text;
+      
+    function next() {
+    const title = document.getElementById('title');
+    title.innerText = "Guess This Beast!";
+    const button = document.getElementById('button');
+    button.onclick = "gs()";
+    button.innerText = "Guess";
+    button.type = "submit";
+    const field = document.createElement("input");
+    field.placeholder = "Guess me!";
+    document.body.appendChild(field);
+</script>
+    
+<body onload="registerJavaScript()">
+<div class="container body-content">
+ <div class="container">
+  <div class="row justify-content-center" style="padding-top:10px;">
+   <h1 id="title">Your goal is to guess the number</h1>
+  </div>
+  <div class="row justify-content-center" style="padding-top:10px;">
+   <button class="btn btn-primary" id="button" onclick="start()">Start</button>
+  </div>
+</div>
+</div>
+</body>
+</html>
